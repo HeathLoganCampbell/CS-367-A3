@@ -1,22 +1,3 @@
-%% h/3 the zero heuristic
-
-% h(_, _, 0).
-
-/*
-h(+State, +Action, ?HValue)
-*/
-% h(State, Action, HValue) :-
-%   HValue is 0.
-  
-% openNode(state(a,[a,b,c,d,e,f]),0,nil)
-% openNode(state(%Current Node%, [%unvisisted nodes%]), %currentCode%, %LastState%)
-% openNode(state(c,[e]), 25, state(d,[c,e]))
-% State = openNode(state(a,[a,b,c,d,e,f]), 0, nil)
-% Action = [(a,[(b,5),(f,6)]),(b,[(a,5),(e,1),(c,4)]),(c,[(b,4),(f,9),(d,2)]),(d,[(e,3),(c,2),(f,7)]),(e,[(b,1),(d,2)]),(f,[(a,6),(c,9),(d,7)])]
-% h(State, Action, HValue).
-
-
-
 /**
  SUMS UP THE TOTAL AKA ITS THE h() function
  findall(CheapestNode, ([a,c,d,e,f] = Unseen, six_cities(RoadNetwork), member(Parent,Unseen) ,findSmallestInEdge(RoadNetwork, Parent, EdgeList),  smallestWeight(EdgeList, CheapestNode)), CheapestPaths), derpSumShitFuckAids(CheapestPaths, Sum).
