@@ -24,7 +24,8 @@ solution(NativeProblem, SolutionCost, SolutionPath) :-
     make_problem(NativeProblem, problem(InitState, GoalState), Actions), %% format of NativeProblem is domain dependent 
     retractall(goalState(_)),  %% get rid of old goal states
     asserta(goalState(GoalState)), %% get new goal state for use by heuristic  
-    make_openNode([state(InitState), gValue(0), parent(nil)], InitNode),
+    h(InitStates, Actions, HValue),
+    make_openNode([state(InitState), gValue(HValue), parent(nil)], InitNode),
     openNode_gValue(InitNode, Priority),
     add_OpenList(EmptyOpenList, Priority, InitNode, OpenList),
     empty_ClosedList(EmptyClosedList),

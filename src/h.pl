@@ -142,8 +142,8 @@ h(state(_, []), _, 0).
 % ExampleState = openNode(state(b,[a,c,d,e,f]), 0, 0).
 % ExampleAction = [(a,[(b,5),(f,6)]),(b,[(a,5),(e,1),(c,4)]),(c,[(b,4),(f,9),(d,2)]),(d,[(e,3),(c,2),(f,7)]),(e,[(b,1),(d,2)]),(f,[(a,6),(c,9),(d,7)])].
 h(State, Action, HValue) :-
-  writeln(State),
-  writeln(Action),
+  % writeln(State),
+  % writeln(Action),
   state(CurrentNode, UnvisitedNodes) = State,
   findall(CheapestNode, (member(Parent, UnvisitedNodes), findSmallestInEdge(Action, Parent, EdgeList),  smallestWeight(EdgeList, CheapestNode)), CheapestPaths), derpSumShitFuckAids(CheapestPaths, HValue).
   % go through the list add them up
